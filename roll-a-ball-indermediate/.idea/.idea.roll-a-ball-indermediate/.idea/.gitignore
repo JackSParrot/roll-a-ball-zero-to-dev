@@ -1,0 +1,13 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+# Rider ignored files
+/modules.xml
+/projectSettingsUpdater.xml
+/.idea.roll-a-ball-indermediate.iml
+/contentModel.xml
+# Datasource local storage ignored files
+/../../../../../../../../../:\Users\Fradbox\repos\roll-a-ball-zero-to-dev\roll-a-ball-indermediate\.idea\.idea.roll-a-ball-indermediate\.idea/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/
