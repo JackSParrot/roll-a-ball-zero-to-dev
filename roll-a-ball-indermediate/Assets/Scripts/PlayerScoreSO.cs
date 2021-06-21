@@ -1,23 +1,9 @@
-using System;
-using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu]
-public class PlayerScoreSO : ScriptableObject
+public class PlayerScoreSO : EventBus
 {
     private int _score = 0;
-
-    private List<Action> _onPlayerScoreChanged = new List<Action>();
-
-    public void AddListener(Action callback)
-    {
-        _onPlayerScoreChanged.Add(callback);
-    }
-
-    public void RemoveListener(Action callback)
-    {
-        _onPlayerScoreChanged.Remove(callback);
-    }
     
     public int Score
     {
@@ -25,14 +11,13 @@ public class PlayerScoreSO : ScriptableObject
         set
         {
             _score = value;
-            _onPlayerScoreChanged.ForEach(callback => callback?.Invoke());
+            Raise();
         }
     }
 
-    public void Reset()
+    public override void Reset()
     {
+        base.Reset();
         _score = 0;
-        _onPlayerScoreChanged.Clear();
     }
-    
 }

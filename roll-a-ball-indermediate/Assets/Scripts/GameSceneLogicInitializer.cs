@@ -5,10 +5,10 @@ using UnityEngine;
 public class GameSceneLogicInitializer : MonoBehaviour
 {
     [SerializeField]
-    private PlayerScoreSO _playerScore = null;
-    
+    private List<EventBus> _eventBuses = new List<EventBus>();
+
     void Awake()
     {
-        _playerScore.Reset();
+        _eventBuses.ForEach(e => e.Reset());
     }
 }
